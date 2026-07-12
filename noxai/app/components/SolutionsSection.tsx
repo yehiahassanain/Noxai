@@ -44,6 +44,102 @@ const solutions: Solution[] = [
       },
     ],
   },
+  {
+    id: 2,
+    image: "/data/SecondDescription.png",
+    imageAlt: "Regulation changes.Nox AI maps the impact.",
+    title: "Regulation changes.Nox AI maps the impact.",
+    bullets: [
+      {
+        text: "When a regulatory obligation changes, Nox AI maps it to internal controls and surfaces evidence gaps on the day it arrives, not three weeks later.",
+        highlight: "regulatory obligation changes",
+      },
+      {
+        text: "Regulatory changes mapped to internal controls in hours, not weeks.",
+        highlight: "mapped to internal controls",
+      },
+      {
+        text: "Every AI mapping is a proposal. Humans approve before any score or action changes.",
+        highlight: "Humans approve",
+      },
+      {
+        text: " Evidence gaps identified before the examiner asks.",
+        highlight: "Evidence gaps identified",
+      },
+    ],
+  },
+  {
+    id: 3,
+    image: "/data/ThirdDescription.png",
+    imageAlt: "Board Intelligence Board-ready.In minutes, not days.",
+    title: "Board Intelligence Board-ready.In minutes, not days.",
+    bullets: [
+      {
+        text: "Nox AI drafts board summaries grounded in live scored data. Every claim is traceable. Every number was produced by the deterministic rules engine.",
+        highlight: "Every claim is traceable",
+      },
+      {
+        text: "AI drafts from live data. The executive team approves before anyone sees it.",
+        highlight: "AI drafts from live data",
+      },
+      {
+        text: "Why it matters, what changed, and what decisions the board needs to make.",
+        highlight: "Why it matters",
+      },
+      {
+        text: " Every number traces back to the finding, the control, and the evidence.",
+        highlight: "Every number traces",
+      },
+    ],
+  },
+  {
+    id: 4,
+    image: "/data/FourthDescription.png",
+    imageAlt: "Two routine findings. One critical path.",
+    title: "Two routine findings. One critical path.",
+    bullets: [
+      {
+        text: "Nox AI continuously analyses signals across IT and OT environments. What appears routine in isolation becomes a high-confidence attack path when analysed together.",
+        highlight: "high-confidence attack path",
+      },
+      {
+        text: "Dangerous combinations detected across environment boundaries that no single monitoring tool would surface alone.",
+        highlight: "Dangerous combinations detected",
+      },
+      {
+        text: "AI explains the path in plain language. The decision to act stays with the executive team.",
+        highlight: "AI explains the path",
+      },
+      {
+        text: "Detected before impact. Not reconstructed after.",
+        highlight: "Detected before impact",
+      },
+    ],
+  },
+  {
+    id: 5,
+    image: "/data/FifthDescription.png",
+    imageAlt: "AI that regulators can inspect.",
+    title: "AI that regulators can inspect.",
+    bullets: [
+      {
+        text: "Every AI action is logged. Every human approval is recorded. The complete chain from signal to decision is visible, traceable, and examination-ready.",
+        highlight: "examination-ready",
+      },
+      {
+        text: "AI proposes. Humans approve. Rules decide. Every step logged to a tamper-evident audit trail.",
+        highlight: "Every step logged",
+      },
+      {
+        text: "When a regulator asks how a decision was made, the complete chain is already there.",
+        highlight: "complete chain",
+      },
+      {
+        text: "AI governance is not a policy. It is the architecture.",
+        highlight: "AI governance is not a policy",
+      },
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────
@@ -118,8 +214,8 @@ function SolutionRow({
           <Image
             src={solution.image}
             alt={solution.imageAlt}
-            width={760}
-            height={500}
+            width={900}
+            height={600}
             className="sol-image"
             priority={solution.id === 1}
             quality={95}
@@ -189,9 +285,9 @@ export default function SolutionsSection() {
         /* ── Row ── */
         .sol-row {
           display: grid;
-          /* Image 60% — text 40% */
-          grid-template-columns: 60fr 40fr;
-          gap: 64px;
+          /* Image 65% — text 35% */
+          grid-template-columns: 65fr 35fr;
+          gap: 56px;
           align-items: center;
           margin-bottom: 110px;
         }
@@ -202,7 +298,7 @@ export default function SolutionsSection() {
 
         /* Reversed: text left, image right */
         .sol-row--reverse {
-          grid-template-columns: 40fr 60fr;
+          grid-template-columns: 35fr 65fr;
         }
         .sol-row--reverse .sol-image-col { order: 2; }
         .sol-row--reverse .sol-text-col  { order: 1; }

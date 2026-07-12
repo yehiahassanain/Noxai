@@ -206,10 +206,10 @@ export default function HeroSection() {
         {/* Content */}
         <div className="hero-content">
           {/* Eyebrow */}
-          {/* <div className="hero-eyebrow">
+          <div className="hero-eyebrow">
             <span className="hero-eyebrow-dot" />
             Nox AI
-          </div> */}
+          </div>
 
           {/* Main heading */}
           <h1 className="hero-heading">
@@ -231,11 +231,11 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Scroll hint */}
-        <div className="hero-scroll-hint" aria-hidden="true">
+    
+        {/* <div className="hero-scroll-hint" aria-hidden="true">
           <div className="hero-scroll-line" />
           <span>Scroll</span>
-        </div>
+        </div> */}
       </section>
     </>
   );

@@ -1,16 +1,17 @@
 import HeroSection from "./components/HeroSection";
 import SolutionsSection from "./components/SolutionsSection";
+import SolutionSection2 from "./components/SolutionSection2";
+import ProcessSection from "./components/ProcessSection";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
     <main>
-      {/* ── Section 1: Hero ── */}
       <HeroSection />
-
-      {/* ── Section 2: Solutions ── */}
       <SolutionsSection />
-
-      {/* ── Section 3 coming soon ── */}
+      <SolutionSection2 />
+      <ProcessSection />
+      {/* <ContactSection /> */}
     </main>
   );
 }

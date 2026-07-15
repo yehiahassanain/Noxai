@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-/* ─────────────────────────────────────────
-   Design Tokens – always dark
-───────────────────────────────────────── */
+   /* Design Tokens – always dark */
 :root {
   --background: #050508;
   --foreground: #f0f0f5;
@@ -28,9 +26,9 @@
   --font-mono: var(--font-mono);
 }
 
-/* ─────────────────────────────────────────
-   Base Reset & Body
-───────────────────────────────────────── */
+
+   /* Base Reset & Body */
+
 *,
 *::before,
 *::after {
@@ -52,9 +50,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─────────────────────────────────────────
-   Scrollbar
-───────────────────────────────────────── */
+
+   /* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -69,9 +67,9 @@ body {
   background: rgba(108, 99, 255, 0.7);
 }
 
-/* ─────────────────────────────────────────
-   Selection
-───────────────────────────────────────── */
+
+   /* Selection */
+
 ::selection {
   background: rgba(108, 99, 255, 0.35);
   color: #fff;

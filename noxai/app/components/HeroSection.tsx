@@ -141,7 +141,7 @@ export default function HeroSection() {
         .hero-subtext {
           font-size: clamp(1rem, 2vw, 1.15rem);
           color: rgba(240, 240, 245, 0.6);
-          max-width: 480px;
+          max-width: 680px;
           line-height: 1.7;
           font-weight: 400;
           animation: heroFadeUp 1s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -205,29 +205,29 @@ export default function HeroSection() {
 
         {/* Content */}
         <div className="hero-content">
-          {/* Eyebrow */}
-          <div className="hero-eyebrow">
+          
+          {/* <div className="hero-eyebrow">
             <span className="hero-eyebrow-dot" />
             Nox AI
-          </div>
+          </div> */}
 
           {/* Main heading */}
           <h1 className="hero-heading">
             The{" "}
-            <span className="gradient-word">Sovereign Artificial</span>
+            <span className="gradient-word">AI Intelligence Layer</span>
             <br />
-            Intelligence Platform.
+            For Cyber Risks.
           </h1>
 
           {/* Sub-text */}
           <p className="hero-subtext">
-            Built for enterprises that demand autonomy, precision, and
-            uncompromising performance — on your terms.
+            Built for regulated enterprises and critical infrastructure operators that need continuous visibility across compliance,
+             threats, assets, and Cyber risk with AI reasoning that is explainable, auditable, and defensible.
           </p>
 
           {/* CTA */}
           <div className="hero-cta">
-            <ContactButton href="#contact" />
+            <ContactButton href="/contact" />
           </div>
         </div>
 

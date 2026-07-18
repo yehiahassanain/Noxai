@@ -56,11 +56,11 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(apiKey);
 
     const fromAddress =
-      process.env.RESEND_FROM_EMAIL ?? "Nox AI <onboarding@resend.dev>";
+      process.env.RESEND_FROM_EMAIL ?? "Nox AI <onboarding@Nox7.ai>";
 
-    const { error: sendError } = await resend.emails.send({
+    const { data: sendData, error: sendError } = await resend.emails.send({
       from: fromAddress,
-      to: ["MM@GridNox.ai"],
+      to: ["Moealy1@outlook.com"],
       subject: `New Contact Form Submission from ${name!.trim()}`,
       html: `
         <div style="font-family: Inter, system-ui, sans-serif; max-width: 560px; margin: 0 auto; background: #0d0d14; color: #f0f0f5; border-radius: 12px; overflow: hidden;">
@@ -118,12 +118,18 @@ export async function POST(req: NextRequest) {
     });
 
     if (sendError) {
-      console.error("[contact] Resend error:", sendError);
+      /* Log full Resend error details for diagnosis */
+      console.error("[contact] Resend error name:", (sendError as { name?: string }).name);
+      console.error("[contact] Resend error message:", (sendError as { message?: string }).message);
+      console.error("[contact] Resend error statusCode:", (sendError as { statusCode?: number }).statusCode);
+      console.error("[contact] Resend error full:", JSON.stringify(sendError));
       return NextResponse.json(
         { error: "Failed to send email. Please try again later." },
         { status: 502 }
       );
     }
+
+    console.log("[contact] Email sent successfully, id:", sendData?.id);
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {

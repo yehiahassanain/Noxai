@@ -145,8 +145,8 @@ export default function ContactSection() {
     setTouched((prev) => ({ ...prev, [e.target.name]: true }));
   }
 
-  /* ── Submit — opens Gmail compose with form data pre-filled ── */
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  /* ── Submit — posts to /api/contact (Resend) ── */
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     /* Touch all fields so validation errors show */
@@ -159,33 +159,35 @@ export default function ContactSection() {
     setServerError("");
 
     try {
-      const to      = "MM@GridNox.ai";
-      const subject = `New Contact Form Submission from ${fields.name.trim()}`;
-      const body = [
-        `Full Name:     ${fields.name.trim()}`,
-        `Email Address: ${fields.email.trim()}`,
-        `Phone Number:  ${fields.phone.trim()}`,
-        ``,
-        `Message:`,
-        fields.message.trim(),
-      ].join("\n");
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fields.name.trim(),
+          email: fields.email.trim(),
+          phone: fields.phone.trim(),
+          message: fields.message.trim(),
+        }),
+      });
 
-      /* Build Gmail compose URL */
-      const gmailUrl =
-        `https://mail.google.com/mail/?view=cm&fs=1` +
-        `&to=${encodeURIComponent(to)}` +
-        `&su=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
+      const data = await res.json();
 
-      /* Open Gmail compose in a new tab */
-      window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      if (!res.ok) {
+        const msg =
+          data?.error ||
+          (data?.errors ? Object.values(data.errors).join(" ") : null) ||
+          "Failed to send message. Please try again.";
+        setServerError(msg);
+        setSubmitStatus("error");
+        return;
+      }
 
-      /* Mark success and clear the form */
+      /* Success — clear the form */
       setSubmitStatus("success");
       setFields({ name: "", email: "", phone: "", message: "" });
       setTouched({});
     } catch {
-      setServerError("Could not open Gmail. Please try again.");
+      setServerError("Network error. Please check your connection and try again.");
       setSubmitStatus("error");
     }
   }
@@ -199,7 +201,14 @@ export default function ContactSection() {
         .contact-section {
           width: 100%;
           padding: 100px 0 120px;
-          background: #050508;
+          background:
+            linear-gradient(
+              to bottom,
+              rgba(5, 5, 8, 0.72) 0%,
+              rgba(5, 5, 8, 0.60) 40%,
+              rgba(5, 5, 8, 0.78) 100%
+            ),
+            url('/data/BackgroundContect.png') center center / cover;
           position: relative;
           overflow: hidden;
         }
@@ -575,11 +584,10 @@ export default function ContactSection() {
             </div> */}
             <h2 className="cf-title">
               Let&apos;s{" "}
-              <span className="cf-title-gradient">Start a Conversation</span>
+              <span className="cf-title-gradient">Break the Ice</span>
             </h2>
             <p className="cf-subtitle">
-              Ready to see Nox AI in action? Send us a message and our team
-              will get back to you shortly.
+              Curious about Nox7? Send us a message
             </p>
           </div>
 
@@ -617,8 +625,8 @@ export default function ContactSection() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  Gmail has opened with your message pre-filled. Please review
-                  and click &quot;Send&quot; in Gmail to deliver it to us.
+                  Your message has been sent successfully! Our team will get back
+                  to you shortly.
                 </div>
               )}
 

@@ -6,17 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "email:dev": "email dev"
   },
   "dependencies": {
     "@types/three": "^0.185.1",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-email": "^6.9.0",
     "resend": "^6.17.2",
     "three": "^0.185.1"
   },
   "devDependencies": {
+    "@react-email/ui": "6.9.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

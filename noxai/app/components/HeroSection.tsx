@@ -116,7 +116,7 @@ export default function HeroSection() {
 
         /* ── Heading ── */
         .hero-heading {
-          font-size: clamp(2.4rem, 6vw, 5rem);
+          font-size: clamp(2.4rem, 5vw, 5rem);
           font-weight: 700;
           line-height: 1.1;
           letter-spacing: -0.03em;
@@ -139,9 +139,9 @@ export default function HeroSection() {
 
         /* ── Sub-text ── */
         .hero-subtext {
-          font-size: clamp(1rem, 2vw, 1.15rem);
+          font-size: clamp(1rem, 1vw, 1.15rem);
           color: rgba(240, 240, 245, 0.6);
-          max-width: 680px;
+          max-width: 780px;
           line-height: 1.7;
           font-weight: 400;
           animation: heroFadeUp 1s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -192,7 +192,7 @@ export default function HeroSection() {
         {/* Background video */}
         <video
           className="hero-video"
-          src="/data/Background.mp4"
+          src="/data/BG1.mp4"
           autoPlay
           loop
           muted
@@ -216,7 +216,7 @@ export default function HeroSection() {
             The{" "}
             <span className="gradient-word">AI Intelligence Layer</span>
             <br />
-            For Cyber Risks.
+            For Cyber Risks
           </h1>
 
           {/* Sub-text */}

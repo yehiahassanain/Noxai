@@ -124,14 +124,14 @@ export default function ProcessSection() {
           display: flex; flex-direction: column;
           align-items: center; gap: 56px;
         }
-        .proc-heading { text-align: center; max-width: 680px; }
+        .proc-heading { text-align: center; max-width: 880px; }
         .proc-eyebrow {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 5px 14px; border-radius: 999px;
           border: 1px solid rgba(108,99,255,0.35);
           background: rgba(108,99,255,0.08);
           backdrop-filter: blur(6px);
-          font-size: 0.7rem; font-weight: 600;
+          font-size: 0.1rem; font-weight: 600;
           letter-spacing: 0.12em; text-transform: uppercase;
           color: rgba(167,139,250,0.9); margin-bottom: 18px;
         }
@@ -158,7 +158,7 @@ export default function ProcessSection() {
           background-clip: text;
         }
         .proc-subtitle {
-          font-size: clamp(0.88rem, 1.5vw, 1.02rem);
+          font-size: clamp(0.88rem, 1vw, 1.02rem);
           color: rgba(240,240,245,0.55);
           line-height: 1.7; margin: 0 auto;
         }
@@ -256,6 +256,32 @@ export default function ProcessSection() {
           background: linear-gradient(90deg, transparent 0%, rgba(167,139,250,0.3) 50%, transparent 100%);
           pointer-events: none;
         }
+        /* ── Step highlight overlays ── */
+        .proc-highlight {
+          position: absolute;
+          top: 4%; bottom: 4%;
+          border-radius: 14px;
+          border: 2px solid rgba(108,99,255,0);
+          background: rgba(108,99,255,0);
+          pointer-events: none;
+          transition:
+            border-color 0.4s cubic-bezier(0.22,1,0.36,1),
+            background   0.4s cubic-bezier(0.22,1,0.36,1),
+            box-shadow   0.4s cubic-bezier(0.22,1,0.36,1);
+        }
+        .proc-highlight--active {
+          border-color: rgba(167,139,250,0.65);
+          background: rgba(108,99,255,0.08);
+          box-shadow:
+            0 0 0 4px rgba(108,99,255,0.07),
+            inset 0 0 28px rgba(108,99,255,0.07),
+            0 0 32px rgba(167,139,250,0.18);
+        }
+        /* Horizontal positions per step (left% + width%) */
+        .proc-hl-1 { left: 1%;   width: 30%; }
+        .proc-hl-2 { left: 34%;  width: 24%; }
+        .proc-hl-3 { left: 59%;  width: 20%; }
+        .proc-hl-4 { left: 78%;  width: 21%; }
         .proc-reveal {
           opacity: 0; transform: translateY(30px);
           transition:
@@ -279,16 +305,15 @@ export default function ProcessSection() {
         <div className="proc-inner">
 
           <div ref={headingRef} className="proc-heading proc-reveal">
-            {/* <div className="proc-eyebrow">
-              <span className="proc-eyebrow-dot" />
-              How It Works
-            </div> */}
             <h2 className="proc-title">
-              From Signals to{" "}
-              <span className="proc-title-gradient">Cyber Decisions</span>
+              The missing intelligence layer between{" "}
+              <span className="proc-title-gradient">Cyber systems</span>
+              {" "}and{" "}
+              <span className="proc-title-gradient">Cyber decisions</span>
             </h2>
             <p className="proc-subtitle">
-              Nox AI connects everything, reasons across gaps, and drives decisive action.
+              It connects existing Risks, regulatories, controls and asset data,
+              then applies AI reasoning to explain what changed and what is exposed.
             </p>
           </div>
 
@@ -321,7 +346,7 @@ export default function ProcessSection() {
               aria-labelledby={`proc-tab-${activeStep}`}
             >
               <Image
-                src="/data/ProcessSection.png"
+                src="/data/ProcessSection1.png"
                 alt="Nox AI process diagram - Connect, Reason, Prioritize, Act"
                 width={1200}
                 height={600}
@@ -329,12 +354,34 @@ export default function ProcessSection() {
                 quality={95}
                 priority={false}
               />
+              {/* Step highlight overlays */}
+              {STEPS.map((step) => (
+                <div
+                  key={step.id}
+                  aria-hidden="true"
+                  className={`proc-highlight proc-hl-${step.id}${
+                    activeStep === step.id ? " proc-highlight--active" : ""
+                  }`}
+                />
+              ))}
               <div className="proc-image-shine" aria-hidden="true" />
             </div>
+            {/* Footer process image — sits flush below the section */}
+      <div style={{ width: "90%", lineHeight: 0, background: "#050508" }}>
+        <Image
+          src="/data/FooterProcess.png"
+          alt="Nox AI process footer diagram"
+          width={1920}
+          height={400}
+          style={{ width: "100%", height: "auto", display: "block",margin:"20px 50px" }}
+          quality={95}
+        />
+      </div>
           </div>
-
         </div>
       </section>
+
+     
     </>
   );
 }

@@ -96,7 +96,7 @@ export default function ContactButton({
         className={`contact-btn ${className}`}
         id="contact-us-btn"
       >
-        <span className="btn-text">Contact Us</span>
+        <span className="btn-text">Get In Touch</span>
         <span className="btn-arrow" aria-hidden="true">
           <svg
             width="17"

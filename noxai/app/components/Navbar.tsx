@@ -18,7 +18,7 @@ interface NavLink {
 const NAV_LINKS: NavLink[] = [
   { label: "Solution", href: "#solutions", isSection: true },
   { label: "Process",  href: "#process",  isSection: true },
-  { label: "Contact Us",   href: "/contact",   isSection: false },
+  { label: "Get In Touch",   href: "/contact",   isSection: false },
 ];
 
 /* ─────────────────────────────────────────
@@ -533,12 +533,13 @@ export default function Navbar() {
       >
         <div className="nb-inner">
           {/* Logo */}
-          <Link href="/" className="nb-logo" aria-label="Nox AI — home">
+          <Link href="/" className="nb-lo
+          go" aria-label="Nox AI — home">
             <Image
               src="/data/Logo.png"
               alt="Nox AI logo"
               width={36}
-              height={36}
+              height={36} 
               className="nb-logo-img"
               priority
             />
@@ -623,7 +624,7 @@ export default function Navbar() {
               aria-label="Nox AI — home"
             >
               <Image
-                src="/data/logo.png"
+                src="/data/Logo.png"
                 alt="Nox AI logo"
                 width={44}
                 height={44}

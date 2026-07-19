@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ContactSection from "../components/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Nox AI",
+  title: "Contact Us — Nox7.ai",
   description:
-    "Get in touch with the Nox AI team. We'd love to hear about your organisation and how our AI intelligence layer can help you manage cyber risk.",
+    "Get in touch with the Nox7.ai team. We'd love to hear about your organisation and how our AI intelligence layer can help you manage cyber risk.",
 };
 
 export default function ContactPage() {

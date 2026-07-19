@@ -208,7 +208,7 @@ export default function HeroSection() {
           
           {/* <div className="hero-eyebrow">
             <span className="hero-eyebrow-dot" />
-            Nox AI
+            Nox7.ai
           </div> */}
 
           {/* Main heading */}

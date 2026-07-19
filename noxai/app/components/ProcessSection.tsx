@@ -301,7 +301,7 @@ export default function ProcessSection() {
         }
       `}</style>
 
-      <section className="proc-section" id="process" aria-label="How Nox AI works">
+      <section className="proc-section" id="process" aria-label="How Nox7.ai works">
         <div className="proc-inner">
 
           <div ref={headingRef} className="proc-heading proc-reveal">
@@ -347,7 +347,7 @@ export default function ProcessSection() {
             >
               <Image
                 src="/data/ProcessSection1.png"
-                alt="Nox AI process diagram - Connect, Reason, Prioritize, Act"
+                alt="Nox7.ai process diagram - Connect, Reason, Prioritize, Act"
                 width={1200}
                 height={600}
                 className="proc-image"
@@ -370,7 +370,7 @@ export default function ProcessSection() {
       <div style={{ width: "90%", lineHeight: 0, background: "#050508" }}>
         <Image
           src="/data/FooterProcess.png"
-          alt="Nox AI process footer diagram"
+          alt="Nox7.ai process footer diagram"
           width={1920}
           height={400}
           style={{ width: "100%", height: "auto", display: "block",margin:"20px 50px" }}

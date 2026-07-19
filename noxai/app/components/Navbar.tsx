@@ -21,9 +21,9 @@ const NAV_LINKS: NavLink[] = [
   { label: "Get In Touch",   href: "/contact",   isSection: false },
 ];
 
-/* ─────────────────────────────────────────
-   Hamburger icon
-───────────────────────────────────────── */
+
+  //  Hamburger icon
+
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
     <svg
@@ -534,17 +534,17 @@ export default function Navbar() {
         <div className="nb-inner">
           {/* Logo */}
           <Link href="/" className="nb-lo
-          go" aria-label="Nox AI — home">
+          go" aria-label="Nox7.ai — home">
             <Image
               src="/data/Logo.png"
-              alt="Nox AI logo"
+              alt="Nox7.ai logo"
               width={36}
               height={36} 
               className="nb-logo-img"
               priority
             />
             {/* <span className="nb-logo-text">
-              Nox<span>AI</span>
+              Nox7<span>.ai</span>
             </span> */}
           </Link>
 
@@ -621,17 +621,17 @@ export default function Navbar() {
               href="/"
               className="nb-logo"
               onClick={() => setMobileOpen(false)}
-              aria-label="Nox AI — home"
+              aria-label="Nox7.ai — home"
             >
               <Image
                 src="/data/Logo.png"
-                alt="Nox AI logo"
+                alt="Nox7.ai logo"
                 width={44}
                 height={44}
                 className="nb-logo-img"
               />
               {/* <span className="nb-logo-text">
-                Nox<span>AI</span>
+                Nox7<span>.ai</span>
               </span> */}
             </Link>
 

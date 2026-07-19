@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(apiKey);
 
     const fromAddress =
-      process.env.RESEND_FROM_EMAIL ?? "Nox AI <onboarding@Nox7.ai>";
+      process.env.RESEND_FROM_EMAIL ?? "Nox7.ai <onboarding@Nox7.ai>";
 
     const { data: sendData, error: sendError } = await resend.emails.send({
       from: fromAddress,
@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
               New Contact Form Submission
             </h1>
             <p style="margin: 6px 0 0; font-size: 0.875rem; color: rgba(255,255,255,0.75);">
-              Received via NoxAI.com contact form
+              Received via Nox7.ai contact form
             </p>
           </div>
 
@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
           </div>
 
           <div style="padding: 20px 32px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.75rem; color: rgba(240,240,245,0.35);">
-            Sent automatically by the NoxAI contact form.
+            Sent automatically by the Nox7.ai contact form.
           </div>
         </div>
       `,

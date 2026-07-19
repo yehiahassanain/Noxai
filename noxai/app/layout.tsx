@@ -14,9 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Noxai — The Sovereign Artificial Intelligence Platform",
+  title: "Nox AI ",
   description:
-    "Noxai is the sovereign AI platform built for enterprises demanding autonomy, precision, and uncompromising performance.",
+    "Nox AI is the sovereign AI platform built for enterprises demanding autonomy, precision, and uncompromising performance.",
+  icons: {
+    icon: "/data/HeaderLogo.png",
+  },
 };
 
 export default function RootLayout({

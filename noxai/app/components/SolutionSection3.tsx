@@ -290,7 +290,7 @@ export default function SolutionSection3() {
               </h2>
 
               <p className="ss3-body">
-                Nox7.ai continuously reasons across your Risks,
+                Nox AI continuously reasons across your Risks,
                  Regulations, Controls, Assets and Business context to deliver clarity,
                   reduce risk and build resilience.
               </p>
@@ -322,7 +322,7 @@ export default function SolutionSection3() {
               <div className="ss3-image-frame">
                 <Image
                   src="/data/FinalSolutionImage.png"
-                  alt="The AI Intelligence Layer for Regulated Enterprises — Nox7.ai platform overview"
+                  alt="The AI Intelligence Layer for Regulated Enterprises — Nox AI platform overview"
                   width={820}
                   height={600}
                   className="ss3-image"

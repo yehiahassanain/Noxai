@@ -587,7 +587,7 @@ export default function ContactSection() {
               <span className="cf-title-gradient">Break the Ice</span>
             </h2>
             <p className="cf-subtitle">
-              Curious about Nox7.ai? Send us a message
+              Curious about Nox7? Send us a message
             </p>
           </div>
 
